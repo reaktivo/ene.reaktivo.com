@@ -1,6 +1,6 @@
 fs = require 'fs'
 
-dir = "cinedf.mx"
+dir = "ene.reaktivo.com"
 
 opts =
   host: 'drop.reaktivo.com'

@@ -1,0 +1,48 @@
+doctype html
+include shoutouts.txt
+html.no-js
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimal-ui")
+    meta(property="og:title", content="")
+    meta(property="og:site_name", content="")
+    meta(property="og:url", content="")
+    meta(property="og:image", content="")
+    meta(property="og:type", content="website")
+    meta(property="og:description", content="")
+    title= title
+    != css('main')
+    != js('modernizr')
+    script.
+      WebFontConfig = {
+        google: { families: [ 'Amatic+SC:400,700' ] }
+      };
+      (function() {
+        // Webfonts
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+
+        // Analytics
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount","UA-35002156-1"]);
+        _gaq.push(["_setDomainName","ene.reaktivo.com"]);
+
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+      })()
+  body
+    block content
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    block scripts
+      != js('main')
